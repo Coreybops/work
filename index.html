@@ -13,7 +13,9 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            background:
+                linear-gradient(135deg, rgba(245, 247, 250, 0.95) 0%, rgba(232, 236, 241, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1600&q=80') center/cover fixed;
             color: #4a5568;
             line-height: 1.6;
         }
@@ -236,25 +238,97 @@
         }
 
         .memorial-banner {
-            background: linear-gradient(rgba(107, 123, 160, 0.1), rgba(107, 123, 160, 0.05));
-            padding: 3rem 2rem;
+            background:
+                linear-gradient(rgba(107, 123, 160, 0.85), rgba(107, 123, 160, 0.75)),
+                url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=1600&q=80') center/cover;
+            padding: 4rem 2rem;
             margin: 4rem 0;
             text-align: center;
         }
 
         .memorial-banner h2 {
             font-size: 2rem;
-            color: #2d3748;
+            color: white;
             margin-bottom: 1rem;
             font-weight: 400;
         }
 
         .memorial-banner p {
-            color: #718096;
+            color: rgba(255, 255, 255, 0.95);
             max-width: 700px;
             margin: 0 auto;
             font-size: 1.1rem;
             line-height: 1.8;
+        }
+
+        .gallery-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .gallery-section > p {
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 2rem 1.5rem 1rem;
+            color: white;
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -293,6 +367,56 @@
                 <div class="feature-icon">🌸</div>
                 <h3>Forever Preserved</h3>
                 <p>Your memorial page remains online indefinitely, ensuring that the legacy of your cherished friend is preserved for years to come.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2>Cherished Memories</h2>
+            <p>Each beloved companion leaves behind a legacy of love, loyalty, and countless precious moments that warm our hearts forever.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80" alt="Golden Retriever">
+                    <div class="gallery-overlay">
+                        <h3>Max</h3>
+                        <p>Forever in our hearts</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80" alt="Cat resting">
+                    <div class="gallery-overlay">
+                        <h3>Whiskers</h3>
+                        <p>Our gentle companion</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=800&q=80" alt="Loyal dog">
+                    <div class="gallery-overlay">
+                        <h3>Buddy</h3>
+                        <p>A true friend</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1573865526739-10c1d3a1f0e3?w=800&q=80" alt="Beautiful cat">
+                    <div class="gallery-overlay">
+                        <h3>Luna</h3>
+                        <p>Grace and beauty</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1529429617124-95b109e86bb8?w=800&q=80" alt="Loving dog">
+                    <div class="gallery-overlay">
+                        <h3>Bella</h3>
+                        <p>Pure love and joy</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&q=80" alt="Peaceful cat">
+                    <div class="gallery-overlay">
+                        <h3>Shadow</h3>
+                        <p>Always by our side</p>
+                    </div>
+                </div>
             </div>
         </section>
 
