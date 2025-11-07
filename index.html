@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Remembered - Pet Memorial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6b7ba0;
+            font-family: 'Georgia', serif;
+        }
+
+        .logo span {
+            color: #a0aec0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #6b7ba0;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #6b7ba0;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 123, 160, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #5a6a8f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 123, 160, 0.4);
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            filter: grayscale(20%);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        .testimonial-section {
+            background: white;
+            padding: 5rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-container h2 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .testimonial {
+            background: #f7fafc;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #6b7ba0;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: #2d3748;
+            color: #a0aec0;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #cbd5e0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .memorial-banner {
+            background: linear-gradient(rgba(107, 123, 160, 0.1), rgba(107, 123, 160, 0.05));
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .memorial-banner h2 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .memorial-banner p {
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Forever <span>Remembered</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#memorials">Memorials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Honoring the Unconditional Love</h1>
+            <p>A beautiful space to celebrate and remember the cherished companions who brought joy, comfort, and endless love into our lives. Their pawprints remain forever on our hearts.</p>
+            <a href="#create" class="cta-button">Create a Memorial</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🕯️</div>
+                <h3>Eternal Tribute</h3>
+                <p>Create a lasting memorial page with photos, stories, and memories that celebrate your beloved companion's unique spirit and the joy they brought to your life.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💝</div>
+                <h3>Share Your Love</h3>
+                <p>Invite family and friends to share their favorite memories, condolences, and stories, creating a beautiful tapestry of love and remembrance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌸</div>
+                <h3>Forever Preserved</h3>
+                <p>Your memorial page remains online indefinitely, ensuring that the legacy of your cherished friend is preserved for years to come.</p>
+            </div>
+        </section>
+
+        <div class="memorial-banner">
+            <h2>Every Pet Deserves to be Remembered</h2>
+            <p>They were more than pets—they were family, confidants, and loyal friends. Their memory deserves a place as special as the love they gave us.</p>
+        </div>
+
+        <section class="testimonial-section">
+            <div class="testimonial-container">
+                <h2>Messages of Comfort</h2>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Creating a memorial for Charlie gave us a beautiful way to process our grief and celebrate his 14 wonderful years with us. Thank you for providing such a peaceful space."</p>
+                    <p class="testimonial-author">— Sarah M.</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"This site helped our whole family come together to share memories of Luna. Reading everyone's stories brought tears and smiles. She will never be forgotten."</p>
+                    <p class="testimonial-author">— The Peterson Family</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>In loving memory of all the faithful companions who have crossed the Rainbow Bridge. Their love lives on in our hearts forever.</p>
+        <div class="footer-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#support">Support</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2025 Forever Remembered. All rights reserved.</p>
+    </footer>
+</body>
+</html>
