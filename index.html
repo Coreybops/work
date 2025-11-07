@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Sign Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0d3b2e;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .stop-sign {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #E31E24;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .stop-sign::before {
+            content: '';
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            background-color: #E31E24;
+            border: 12px solid white;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        .stop-text {
+            position: relative;
+            color: white;
+            font-size: 120px;
+            font-weight: bold;
+            font-family: 'Arial Black', sans-serif;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .subtitle {
+            color: white;
+            font-size: 24px;
+            margin-top: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stop-sign">
+            <div class="stop-text">STOP</div>
+        </div>
+        <p class="subtitle">Welcome to the Landing Page</p>
+    </div>
+</body>
+</html>
